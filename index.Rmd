@@ -194,17 +194,6 @@ par(mar = c(2, 2, 0.1, 0.1))
 plot(bradypus.sp2,axes=T,col="blue")
 plot(wrld_simpl,add=T)
 
-# Asignamos al objeto "fileStrig" ruta completa del archivo shp
-fileStrig <- "https://djwillichile.github.io/MODULO_05/DATA/bradypus.shp"
-
-# importamos la capa mediante la función "readOGR"
-bradypus <- readOGR("DATA/bradypus.shp",encoding = "ESRI Shapefile")
-bradypus
-
-# graficamos
-par(mar = c(2, 2, 0.1, 0.1))
-plot(bradypus.sp2,axes=T,col="red")
-plot(wrld_simpl,add=T)
 ```
 <br>
 Como ya habrán visto, la importación de estos datos espaciales sigue el mismo patrón, la función `readOGR()` requiere el nombre del archivo y algunas veces la codificación de este para que no se desconfigure la base de datos no espacial asociada al archivo, de todos modos podrán revisar el detalle de esta función incorporando un sigo de interrogación antes de la función (`?readOGR()`) u ocupando la función help (`help("readOGR")`)
