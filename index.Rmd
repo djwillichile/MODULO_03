@@ -147,18 +147,107 @@ Esto es de gran utilidad para determinar la lógica y el orden en que ocurren la
 
 ![](https://djwillichile.github.io/MODULO_03/IMG/CONTROL.jpg){width='100%'}
 
-Es posible reconocer 3 principales tipos de estructuras de control, por un lado tenemos las estructuras de **secuencia**, la cuale se caracterizan por ser el tipo de estructura mas simple y consta de ejecutar instrucciones en un orden especifico, una tras otra, este tipo de estructura se puede agrupar en 3 tipos de algoritos, **Asignación**, **Entrada** y **Salida**.
+Es posible reconocer 3 principales tipos de estructuras de control, por un lado tenemos las estructuras de **secuencia**, la cual se caracterizan por ser el tipo de estructura mas simple y consta de ejecutar instrucciones en un orden especifico, una tras otra, este tipo de estructura se puede agrupar en 3 tipos de algoritmos, **Asignación**, **Entrada** y **Salida**.
 
-Las estructuras *condicionales* o de desición, por otro lado, son estructuras que  permiten seleccionar la rama del código a ejecutar dependiendo de la falsedad o veracidad de una o varias expresiones lógicas, dicho resultado sera utilizado por una estructura condicional para desviar el flujo de ejecución de un programa, es decir, si la condicion es verdadera se hace una cosa y si es falsa se hace otra. la estructura condicional se puede clasificar cómo **simple** (una respuesta si es verdadero y otra si es falso) o **compleja** (dependiendo de la desición se tomaráuna rama u otra).
+Las estructuras *condicionales* o de decisión, por otro lado, son estructuras que  permiten seleccionar la rama del código a ejecutar dependiendo de la falsedad o veracidad de una o varias expresiones lógicas, dicho resultado sera utilizado por una estructura condicional para desviar el flujo de ejecución de un programa, es decir, si la condición es verdadera se hace una cosa y si es falsa se hace otra. la estructura condicional se puede clasificar cómo **simple** (una respuesta si es verdadero y otra si es falso) o **compleja** (dependiendo de la decisión se tomará una rama u otra).
 
-Esta estructura la podemos observar en nuestra vida cotidiana talcomo lo podemos observar en el siguiente diagrama
+Esta estructura la podemos observar en nuestra vida cotidiana tal como lo podemos observar en el siguiente diagrama
 
 ![](https://djwillichile.github.io/MODULO_03/IMG/CONDICIONAL.jpg){width='100%'}
 
-Por último, la estructura de **bucle**, ciclica o también llamada iterativa cumplen la función de ejecutar un bloque de código un numero definido de veces, es decir como su nombre lo dice, repiten las mismas lineas de código una y otra vez según sea necesario. Podemos identificar 3 tipos de estructuras cíclicas, las que se ejecutan mientras se siga cumpliendo una condición, aquellas que se ejecutan hasta que se cumple una condición o las que se ejecutan una cantidad definida de veces.
+Por último, la estructura de **bucle**, cíclica o también llamada iterativa cumplen la función de ejecutar un bloque de código un numero definido de veces, es decir como su nombre lo dice, repiten las mismas lineas de código una y otra vez según sea necesario. Podemos identificar 3 tipos de estructuras cíclicas, las que se ejecutan mientras se siga cumpliendo una condición, aquellas que se ejecutan hasta que se cumple una condición o las que se ejecutan una cantidad definida de veces.
 
 
 Las estructuras de control más usadas en R son las siguientes.
+
+|Tipo|Estructura de control| Descripción|
+|:------------:|:-----------:|:------------:|
+| Condicional| `if`/`else`| Si / de lo contrario|
+| Bucle| `for`| Para cada uno en|
+| Bucle| `while`| Mientras|
+| Bucle| `repeat`| ejecuta |
+| Secuencia| `break`| Interrupción|
+| Secuencia| `next`| Siguiente|
+
+### Operaciones condicionales
+Tal como mencionamos anteriormente, las operaciones condicionales nos permiten tomar decisiones y desviar el flujo de código por distintas ramas de éste. una de las funciones más utilizadas cómo estructura de control condicional es `if/else`.
+
+`if` (si) es usado cuando deseamos que una operación se ejecute únicamente cuando una condición se cumple. `else` (de lo contrario) es usado para indicarle a R qué hacer en caso de la condición de un if no se cumpla.
+
+se utiliza `if` para decirle a R **SI** esta condición es cierta, **ENTONCES** haz estas operaciones, a continuación podemos apreciar la sintaxis necesaria para usar esta función.
+
+```{r, eval=FALSE}
+# si se cumple la condición, enconces haz lo siguiente
+if(Condición) {
+  operaciones_si_la_condición_es_TRUE
+}
+```
+Si la condición se cumple, es decir, es verdadera (`TRUE`), entonces se realizan las operaciones. En caso contrario, no ocurre nada y el código con las operaciones no es ejecutado. Si la condición conlleva a realizar una única acción, es posible usarla siguiente sintaxis.
+```{r, eval=FALSE}
+# si se cumple la condición, enconces haz lo siguiente
+if(Condición) operaciones_si_la_condición_es_TRUE
+```
+
+Por ejemplo, le pedimos a R que nos muestre el texto “Verdadero” si la condición se cumple.
+
+```{r}
+# Se cumple la condición y se muestra "verdadero"
+if(4 > 3) {
+  "Verdadero"
+}
+
+# No se cumple la condición y no pasa nada
+if(4 > 5) {
+  "Verdadero"
+}
+```
+
+En el caso que nuestra intención sea que el código ejecute una acción cuando la condición sea verdadera y otra cuando sea falsa, es posible utilizar el operador `else` que complementa al `if`, pues indica qué ocurrirá cuando la condición no se cumple, sea falsa (`FALSE`), en lugar de no hacer nada.
+
+Por lo tanto, utilizar la sentencia `if` acompañada de un `else` es como que planteemos que **SI** esta condición es cierta, **ENTONCES** realizamos estas operaciones, **DE LO CONTRARIO** realizamos estas otras operaciones.
+
+Es así que la sintaxis para plantear esta sentencia será
+
+```{r, eval=FALSE}
+# si se cumple la condición, enconces haz lo siguiente de lo cotnrario, haz lo otro
+if(condición) {
+  operaciones_si_la_condición_es_TRUE
+} else {
+  operaciones_si_la_condición_es_FALSE
+}
+
+```
+
+Si la condición conlleva a realizar una única acción, es posible usarla siguiente sintaxis.
+
+```{r, eval=FALSE}
+# si se cumple la condición, enconces haz lo siguiente de lo cotnrario, haz lo otro
+if(condición) operaciones_si_la_condición_es_TRUE else operaciones_si_la_condición_es_FALSE
+```
+
+Usando los ejemplos anteriores, podemos mostrar “Falso” si no se cumple la condición, en lugar de que no ocurra nada.
+
+```{r}
+# Se cumple la condición y se muestra "Verdadero"
+if(4 > 3) {
+  "Verdadero"
+} else {
+  "Falso"
+}
+
+# No se cumple la condición y se muestra "Falso"
+if(4 > 5) {
+  "Verdadero"
+} else {
+  "Falso"
+}
+```
+
+Pongámonos en situación ¿qué estructura condicional es más adecuada utilizar en cada situación?
+
+1. Si quiero saber si una persona debería estar jubilada de acuerdo a su edad.
+2. Si tengo una válvula para riego y quiero saber si la abro o la cierro de acuerdo a la humedad del suelo.
+2. Estoy en un aula de clases, pero si hay más de 20 estudiantes debo cambiarme a un aula más grande.
 
 Existe un gran número de formatos en que se puede importar datos, un ejemplo de estos es el ya conocido **csv** (*Comma Separated Values*), o el versátil **xlsx** de Excel, a continuación se importarán datos desde los formatos csv, xlsx, shp y kml. Para estos ejemplos utilizaremos los materiales encontrados en el repositorio <https://github.com/djwillichile/MODULO_05/tree/gh-pages/DATA>, también pueden acceder a todo el material utilizado para esta actividad mediante el siguiente **[enlace](https://djwillichile.github.io/MODULO_05/DATA/Materiales.zip)**.
 
