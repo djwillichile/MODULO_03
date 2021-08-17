@@ -25,7 +25,7 @@ Sys.setenv(LANG = "es")
 <br>
 
 # Estructuras en la programación
-## Consideraciones y conseptos básicos
+## Consideraciones y conceptos básicos
 Antes de iniciar con la actividad de hoy es fundamental conocer un poco del vocabulario usado en en este lenguaje de programación. algunos conceptos básicos tienen una nomenclatura en concreto que deberíamos manejar como lenguaje con común para que no hayan confusiones al momento de desarrollar las actividad.
 
 Cuando hablamos del concepto **ejecutar**, **llamar** o **correr** nos referimos a pedir que R realice algo, en otras palabras, estamos dando una **instrucción** o una **entrada **.
