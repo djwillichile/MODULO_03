@@ -23,12 +23,10 @@ Sys.setenv(LANG = "es")
 ```
 
 <br>
-
-# Estructuras en la programación
-## Consideraciones y conceptos básicos
+# Consideraciones y conceptos básicos
 Antes de iniciar con la actividad de hoy es fundamental conocer un poco del vocabulario usado en este lenguaje de programación. algunos conceptos básicos tienen una nomenclatura en concreto que deberíamos manejar como lenguaje con común para que no hayan confusiones al momento de desarrollar las actividad.
 
-### Ejecución y devolución
+## Ejecución y devolución
 
 Cuando hablamos del concepto **ejecutar**, **llamar** o **correr** nos referimos a pedir que R realice algo, en otras palabras, estamos dando una **instrucción** o una **entrada **.
 
@@ -44,7 +42,7 @@ Por ejemplo, si escribimos la línea de código siguiente en la consola y en seg
 
 Por otro lado Una función, a grandes rasgos, es una serie de operaciones a las que les hemos asignados un nombre. Las funciones aceptan argumentos, es decir, especificaciones sobre cómo deben funcionar. Cuando llamamos una función, se realizan las operaciones que ésta contiene, usando los argumentos que hemos establecido.
 
-### directorios
+## directorios
 
 El **directorio** o carpeta de trabajo es el lugar en nuestra computadora en el que se encuentran los archivos con los que estamos trabajando en R. Este es el lugar donde R buscara archivos para importarlos y al que serán exportados, a menos que indiquemos otra cosa.
 
@@ -60,7 +58,7 @@ setwd("G:/nuevo directorio")
 
 En el próximo módulo podrán estudiar más en detalle esta funciones y sus parámetros, así como también, podrán manipular ficheros y directorios para un trabajo más eficiente.
 
-### Paquetes
+## Paquetes
 
 R puede ser expandido con **paquetes** o **bibliotecas** que permiten una manipulación más eficiente de la programación en función de sus objetivos específicos. Cada paquete es una colección de funciones diseñadas para atender una tarea específica. Por ejemplo, hay paquetes para trabajo visualización geoespacial, análisis psicométricos, minería de datos, interacción con servicios de Internet y muchas otras cosas más.
 
@@ -78,7 +76,7 @@ library(rgdal)
 
 Por último, haremos referencia al concepto de **script**, los *scripts* son documentos de texto plano como cualquier otro documentos de texto, pero que permite la lectura y ejecución de las lineas de código R contenidas en éste.
 
-## Esquema de estructuración
+# Esquema de estructuración
 
 Como ya habrán podido darse cuenta durante el desarrollo del curso, al momento de generar un script, éste se ejecuta de manera secuencial, y por lo tanto es necesario definir una estructura lógica para si escritura. Existen muchas formas en que pueden estructurar los script, a continuación, se les plantea uno de los esquemas más extendidos en el mundo de la programación.
 
@@ -86,13 +84,13 @@ Es posible diferenciar 3 bloques bien definidos que se aprecian en la imagen sig
 
 ![](https://djwillichile.github.io/MODULO_03/IMG/ESTRUCTURA.png){width='100%'}
 
-### Header o cabecera
+## Header o cabecera
 Corresponde al bloque en que se desea configurar el ambiente del *script* que se está escribiendo. En éste bloque se limpia la consola en caso ser necesario, se cargan los paquetes a utilizar (caso de no tenerlos instalados es necesario llamar a la función para instalar el paquete antes de cargarlo), se definen las funciones que se utilizarán más adelante en el script y se define el directorio de trabajo.
 
-### main o cuerpo principal
+## main o cuerpo principal
 Corresponde al bloque en el que se desarrollará la gran mayoría del código, en éste se cargarán los datos, constantes o variables de entrada (o iniciales) necesarias para desarrollar los procesos, se escriben los procesos a realizar en función de las operaciones aritméticas y lógicas definidas por las diversas estructuras de control (de las cuales hablaremos en unos instantes) y por último se guardarán los resultados de los procesos, exportándolos a sus respectivos formatos de salida.
 
-### Foother o piecera
+## Foother o piecera
 Por último, éste bloque busca cerrar todo proceso que haya quedado abierto en los bloques anteriores, permite liberar los recursos utilizados en los procesos desarrollados por el programa ejecutado y evitar un mal uso de la memoria virtual y física. Realizar este ultimo paso, se considera una buena práctica en el mundo de la programación.
 
 A continuación podemos observar un esquema en el que es posible encontrar los 3 bloques mencionados de la estructura planteada, recordar que es solo un script de ejemplo para visualizar la estructura, algunas funciones aun no las hemos visto, pero las describiremos más adelante en el curso.
@@ -138,7 +136,7 @@ x=c(20, 20.3, 21, 20, 19, 20, 19, 19, 20, 21,20, 20, 19, 19, 20, 20)
 
 
 
-## Estructuras de control
+# Estructuras de control
 Anteriormente mencionamos que las operaciones que se desarrollan en el *main* estaban definidas por las estructuras de control, justamente, como su nombre lo indica, éstas permiten controlar la manera en que se ejecuta nuestro programa.
 
 Las estructuras de control establecen condiciones y rutinas para la ejecución del código. Un ejemplo de esto sería indicar las condiciones que se deben cumplir para realizar una operación aritmética o las necesarias para ejecutar una función en particular.
@@ -169,7 +167,7 @@ Las estructuras de control más usadas en R son las siguientes.
 | Secuencia| `break`| Interrupción|
 | Secuencia| `next`| Siguiente|
 
-### Operaciones condicionales
+## Operaciones condicionales
 Tal como mencionamos anteriormente, las operaciones condicionales nos permiten tomar decisiones y desviar el flujo de código por distintas ramas de éste. una de las funciones más utilizadas cómo estructura de control condicional es `if/else`.
 
 `if` (si) es usado cuando deseamos que una operación se ejecute únicamente cuando una condición se cumple. `else` (de lo contrario) es usado para indicarle a R qué hacer en caso de la condición de un if no se cumpla.
@@ -247,174 +245,95 @@ Pongámonos en situación ¿qué estructura condicional es más adecuada utiliza
 
 1. Si quiero saber si una persona debería estar jubilada de acuerdo a su edad.
 2. Si tengo una válvula para riego y quiero saber si la abro o la cierro de acuerdo a la humedad del suelo.
-2. Estoy en un aula de clases, pero si hay más de 20 estudiantes debo cambiarme a un aula más grande.
+3. Estoy en un aula de clases, pero si hay más de 20 estudiantes debo cambiarme a un aula más grande.
 
-Existe un gran número de formatos en que se puede importar datos, un ejemplo de estos es el ya conocido **csv** (*Comma Separated Values*), o el versátil **xlsx** de Excel, a continuación se importarán datos desde los formatos csv, xlsx, shp y kml. Para estos ejemplos utilizaremos los materiales encontrados en el repositorio <https://github.com/djwillichile/MODULO_05/tree/gh-pages/DATA>, también pueden acceder a todo el material utilizado para esta actividad mediante el siguiente **[enlace](https://djwillichile.github.io/MODULO_05/DATA/Materiales.zip)**.
+## Bucles o cíclos
+Como indica su nombre, estas estructuras de control, permiten general ciclos y por lo tanto realizar operaciones repetitivas dentro de un código, digamos que deseo hacer una sumatoria, lo que implica ir sumando cada valor encontrado con el número anterior, para esto puedo utilizar un ciclo que haga justamente eso, tomar un valor acumulado sumarle un nuevo valor y realizar esa misma operación hasta el último valor de nuestra secuencia de datos.
 
-## importar datos desde csv
-Este método es uno de los más sencillos de implementar y a la vez, el que permite más formas distintas de realizarlo. utilizaremos el archivo *bradypus.csv*
+Para esto tenemos distintos tipos de funciones que fungirán como estructuras de control, por un lado tenemos el ciclo `for` el cual nos permite realizar una operación con cada elemento dentro de un conjunto de elementos, mientras que la función `while` permite realizar una acción **mientras** se cumpla una cierta condición.
 
-```{r, include = T,eval=T}
-# Asignamos al objeto "path" la ruta del archivo que utilizaremos
-path <- "https://djwillichile.github.io/MODULO_05/DATA"
+### Ciclo for
 
-# Asignamos al objeto "file" el nombre del archivo que utilizaremos
-file <- "bradypus.csv"
+Para la construcción del ciclo `for` es posible utilizar la siguiente sintaxis
 
-#ruta completa del archivo
-fileStrig <- paste0(path,"/",file)
-fileStrig
+```{r, eval=FALSE}
+# En caso que haya más de una operación por ciclo
+for(elemento in objeto) {
+  operacion_con_elemento
+}
 
-# Leemos el archivo mediante la función "read.csv"
-bradypus <- read.csv(file = fileStrig)
+# En caso que haya una única operación por ciclo
+for(elemento in objeto) {operacion_con_elemento}
+for(elemento in objeto) operacion_con_elemento
+```
 
-# Es posible observar una porcion de los datos cargados
-head(bradypus)
+Los dos bucles siguientes son equivalentes, sólo cambia el nombre del elemento que tomará el valor. Cabe destacar que tradicionalmente se usa la letra `i` para denotar al elemento, ya que viene de la palabra iteration.
 
+```{r, eval=FALSE}
+objeto <- 1:10
+
+for(elemento in objeto) {
+  operacion_con_elemento
+}
+
+for(i in objeto) {
+  operacion_con_elemento
+}
+```
+
+Pongámonos en situación ¿cómo resolveríamos el siguiente planteamiento?
+
+1. Se desea obtener e imprimir en pantalla el cuadrado de cada uno de los elementos en un vector numérico del 1 al 6, que representa las caras de un dado.
+2. Se desea calcular el promedio del vector`edades`. 
+3. Necesitamos saber cuanto es el total de unidades vendidas del vector `vendidos`.
+3. Necesitamos saber la mayor estatura entre los estudiantes presentes en el vector `estatura`.
+
+```{r, eval=FALSE}
+vendidos = c(120, 100, 132, 112, 95, 164, 172, 183, 155, 176, 110, 115)
+edades = c(20.8, 20.6, 21.0, 20.9, 19.9, 20.2, 19.8, 19.6, 20.9, 21.1)
+estatura = c(1.83, 1.71, 1.79, 1.64, 1.74, 1.81, 1.62, 1.84, 1.68, 1.81, 1.82, 1.74, 1.84,
+1.61, 1.84)
+```
+
+Es importante mencionar que los ciclos `for` a pesar de su utilidad son muy ineficientes y no se recomienda utilizarlos para programación de alto nivel, en ese caso es preferente usar la familia de funciones `apply()`
+
+### Ciclo while
+
+Para la construcción del ciclo `while` es posible utilizar la siguiente sintaxis
+
+```{r, eval=FALSE}
+# En caso que haya más de una operación por ciclo
+while(condicion) {
+  operaciones
+}
+
+# En caso que haya una única operación por ciclo
+while(condicion) {operaciono}
+while(condicion) operaciono
 ```
 
 
+Pongámonos en situación ¿cómo resolveríamos el siguiente planteamiento?
 
-Cabe destacar que es posible leer estos datos utilizando también la función `read.table()` o `read.delim()`
+1. Se desea obtener e imprimir en pantalla el cuadrado de cada uno de los elementos en un vector numérico del 1 al 6, que representa las caras de un dado.
+2. Se desea calcular el promedio del vector`edades`. 
+3. Necesitamos saber cuanto es el total de unidades vendidas del vector `vendidos`.
+3. Necesitamos saber la mayor estatura entre los estudiantes presentes en el vector `estatura`.
 
-```{r}
-# Leemos el archivo mediante la función "read.table"
-bradypus <- read.table(file = fileStrig,sep = ",",dec = ".",header = T)
-head(bradypus)
-
-# Leemos el archivo mediante la función "read.delim"
-bradypus <- read.delim(file = fileStrig,sep = ",",dec = ".",header = T)
-head(bradypus)
+```{r, eval=FALSE}
+vendidos = c(120, 100, 132, 112, 95, 164, 172, 183, 155, 176, 110, 115)
+edades = c(20.8, 20.6, 21.0, 20.9, 19.9, 20.2, 19.8, 19.6, 20.9, 21.1)
+estatura = c(1.83, 1.71, 1.79, 1.64, 1.74, 1.81, 1.62, 1.84, 1.68, 1.81, 1.82, 1.74, 1.84,
+1.61, 1.84)
 ```
 
-## Otros formatos para importar
-Así como importamos la base de datos a partir de un *csv* que contenía la información, también es posible utilizar distintas extensiones de archivos, como por ejemplo los textos delimitados por tabulación (*txt*), la extensión de Microsoft Excel (*xls* o *xlsx*) o extensiones más conocidas en el mundo del análisis espacial como lo son el Keyhole Markup Language (*kml*) de Google Earth o el Shape File (*shp*) de ESRI, los cuales veremos más a delante.
 
-Para las primeras 3 extensiones, la manera en que se pueden cargar los archivos son relativamente parecidas, la gran diferencia es que el texto delimitado por tabulación no necesita de paquetes externos al de *r base* para su importación.
-A continuación veremos de manera muy resumida como importar la misma base de datos proveniente de distintos ficheros con estas 3 extensiones.
+Un uso común de while es que realice operaciones que queremos detener cuando se cumple una condición, pero desconocemos cuándo ocurrirá esto
 
-### textos delimitados por tabilación (*txt*)
-```{r}
-# Asignamos al objeto "fileStrig" ruta completa del archivo
-fileStrig <- "https://djwillichile.github.io/MODULO_05/DATA/bradypus.txt"
+Supongamos que, por alguna razón queremos sumar calificaciones, del 1 al 10 al azar, hasta llegar a un número que mayor o igual a 50. Además nos interesa saber cuántas calificaciones sumaron y cuál fue el resultado al momento de cumplir la condición.
 
-# Leemos el archivo mediante la función "read.table"
-bradypus <- read.table(file = fileStrig,sep = "\t",dec = ".",header = T)
-head(bradypus)
+# Funciones
+La instalación base de R tiene suficientes funciones para que realicemos todas las tareas básicas de análisis de datos, desde importar información hasta crear documentos para comunicarla, por ejemplo, esta página ha sido creada en R.
 
-# Leemos el archivo mediante la función "read.delim"
-bradypus <- read.delim(file = fileStrig,sep = "\t",dec = ".",header = T)
-head(bradypus)
-```
+Sin embargo, es común que necesitemos realizar tareas para las que no existe una función específica o que para encontrar solución necesitemos combinar o utilizar funciones en sucesión, lo cual puede complicar nuestro código.
 
-### libro de Microsoft Excel 1997-2003 (*xls*)
-```{r}
-# cargamos paquete para soportar el formato
-library(readxl)
-
-# creamos un archivo temporal en el objeto "temp"
-temp <- tempfile(fileext = ".xls")
-
-# Asignamos al objeto "fileStrig" ruta completa del archivo y lo descargamos
-fileStrig <- "https://djwillichile.github.io/MODULO_05/DATA/bradypus.xls"
-curl::curl_download(fileStrig, temp) # descargar el fichero en el archivo temporal 
-
-# Leemos el archivo temporal mediante la función "read_excel"
-bradypus <- read_excel(temp,1)
-head(bradypus)
-```
-
-### libro de Microsoft Excel (*xlsx*)
-```{r}
-# cargamos paquete para soportar el formato
-library(openxlsx)
-
-# Asignamos al objeto "fileStrig" ruta completa del archivo
-fileStrig <- "https://djwillichile.github.io/MODULO_05/DATA/bradypus.xlsx"
-
-# Leemos el archivo temporal mediante la función "read_excel"
-bradypus <- read.xlsx(fileStrig,1)
-head(bradypus)
-```
-
-<br>
-  Es posible apreciar que el objeto `bradypus` es un data.frame común y que no constituye un objeto de tipo espacial
-```{r}
-class(bradypus)
-```
-<br>
-  Es importante precisar que los datos puntuales requieren contar con al menos 2 variables correspondientes a las coordenadas geográficas verticales (*latitud*) y horizontales (*longitud*), a las que adicionalmente se les puede incluir una tercera variable correspondiente a la coordenada ortogonal de altura (*altitud*). Para este ejemplo es posible apreciar que contamos con la variable horizontal y vertical de coordenadas, *lon* y *lat* respectivamente.
-
-```{r,echo = F}
-library(knitr)
-kable(head(bradypus), align ="c")
-
-```
-## Crear capas espaciales de puntos
-  Para crear objetos espaciales a partir de matrices o data.frames con coordenadas espaciales es posible utilizar las funciones `SpatialPoints()`,`SpatialPointsDataFrame()` o `coordinates()`. Es preciso mencionar que para utilizar dichas funciones es necesario llamar al paquete `sp` el cual se carga automáticamente al llamar a los paquetes `raster` y/o `rgdal`. También es necesario que las coordenadas espaciales se encuentren registradas en un único sistema de referencia con su respectivo DATUM y tener muy claro a cual corresponde para evitar problemas al momento de georreferenciar las coordenadas.
-
-
-```{r, fig.align='center'}
-# Cargamos paquetes espaciales
-library(raster)
-library(rgdal)
-library(maptools)
-
-# importamos una capa espacial del mundo para contextualizar
-data(wrld_simpl)
-par(mar = c(2, 2, 0.1, 0.1))
-
-# Creamos el objeto espacial "bradypus.sp" donde proj4string corresponde al sistema de referencia
-bradypus.sp <- SpatialPoints(bradypus[c("lon","lat")], proj4string=crs("+init=epsg:4326"))
-bradypus.sp
-
-# graficamos el objeto espacial, cosa que no era posible hacer con el data.frame
-plot(bradypus.sp,axes=T,col="blue")
-
-# añadimos a la gráfica la capa espacial del mundo
-plot(wrld_simpl,add=T)
-
-# realizamos el mismo procedimiento con la función "SpatialPointsDataFrame"
-bradypus.sp2 <- SpatialPointsDataFrame(bradypus[c("lon","lat")], data = bradypus["species"], proj4string=crs("+init=epsg:4326"))
-bradypus.sp2
-
-# graficamos
-plot(bradypus.sp2,axes=T,col="red")
-plot(wrld_simpl,add=T)
-
-# ahora realizamos el mismo procedimiento con la función "coordinates"
-bradypus.sp3 <- bradypus
-coordinates(bradypus.sp3) <- ~lon+lat
-crs(bradypus.sp3)=crs("+init=epsg:4326")
-bradypus.sp3
-
-# graficamos
-plot(bradypus.sp3,axes=T,col="forestgreen")
-plot(wrld_simpl,add=T)
-```
-<br>
-  Cómo habrán podido notar, los 3 métodos permiten obtener resultados muy parecidos utilizando a su vez una sintaxis simple que no requiere mayor análisis, es decir, se requiere la base de datos con coordenadas y el sistema de referencia, la principal diferencia radica en que la función `SpatialPoints()` devuelve solo las coordenadas espaciales georreferenciadas mientras que las otras 2 georeferencian todo el contenido de la base de datos.
-  
-## Importar capas vectoriales
-Ya aprendimos como importar información y crear capas vectoriales a partir de bases de datos puntuales, pero en el mundo del análisis espacial se manejan distintos formatos y archivos con los que van a toparse de vez en cuando, algunos de estos formatos con los ya mencionados *shp* y *kml*, por suerte existen paquetes para importar y manipular dichos archivos, una de las funciones más utilizadas para cargar estos archivos `readOGR()` del paquete `rgdal`
-
-```{r , include=FALSE}
-dev.off(dev.list())
-```
-
-```{r, fig.align='center'}
-# Asignamos al objeto "fileStrig" ruta completa del archivo kml
-fileStrig <- "https://djwillichile.github.io/MODULO_05/DATA/bradypus.kml"
-
-# importamos la capa mediante la función "readOGR"
-bradypus <- readOGR(fileStrig,layer = "bradypus")
-bradypus
-
-# graficamos
-par(mar = c(2, 2, 0.1, 0.1))
-plot(bradypus.sp2,axes=T,col="blue")
-plot(wrld_simpl,add=T)
-
-```
-<br>
-Como ya habrán visto, la importación de estos datos espaciales sigue el mismo patrón, la función `readOGR()` requiere el nombre del archivo y algunas veces la codificación de este para que no se desconfigure la base de datos no espacial asociada al archivo, de todos modos podrán revisar el detalle de esta función incorporando un sigo de interrogación antes de la función (`?readOGR()`) u ocupando la función help (`help("readOGR")`)
