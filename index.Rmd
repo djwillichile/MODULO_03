@@ -76,7 +76,8 @@ Por último, haremos referencia al concepto de **script**, los *scripts* son doc
 
 Como ya habrán podido darse cuenta durante el desarrollo del curso, al momento de generar un script, éste .
 
-![](https://volaya.github.io/libro-sig/img/Primitivas_vectoriales.png){width='100%'}
+
+![](https://djwillichile.github.io/MODULO_03/IMG/ESTRUCTURA.png){width='100%'}
 
 ## Importación de datos puntuales
 Existe un gran número de formatos en que se puede importar datos, un ejemplo de estos es el ya conocido **csv** (*Comma Separated Values*), o el versátil **xlsx** de Excel, a continuación se importarán datos desde los formatos csv, xlsx, shp y kml. Para estos ejemplos utilizaremos los materiales encontrados en el repositorio <https://github.com/djwillichile/MODULO_05/tree/gh-pages/DATA>, también pueden acceder a todo el material utilizado para esta actividad mediante el siguiente **[enlace](https://djwillichile.github.io/MODULO_05/DATA/Materiales.zip)**.
