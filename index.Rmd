@@ -26,11 +26,11 @@ Sys.setenv(LANG = "es")
 
 # Estructuras en la programación
 ## Consideraciones y conceptos básicos
-Antes de iniciar con la actividad de hoy es fundamental conocer un poco del vocabulario usado en en este lenguaje de programación. algunos conceptos básicos tienen una nomenclatura en concreto que deberíamos manejar como lenguaje con común para que no hayan confusiones al momento de desarrollar las actividad.
+Antes de iniciar con la actividad de hoy es fundamental conocer un poco del vocabulario usado en este lenguaje de programación. algunos conceptos básicos tienen una nomenclatura en concreto que deberíamos manejar como lenguaje con común para que no hayan confusiones al momento de desarrollar las actividad.
 
 Cuando hablamos del concepto **ejecutar**, **llamar** o **correr** nos referimos a pedir que R realice algo, en otras palabras, estamos dando una **instrucción** o una **entrada **.
 
-Cuando hablamos de **línea de código**, hacemos referencia hacemos referencia a cada linea con **instrucciones** específicas, las cuales pueden ser simples o complejas, dependiendo de cuantas instrucciones concatenadas se les haya incluido.
+Cuando hablamos de **línea de código**, hacemos referencia a cada linea con **instrucciones** específicas, las cuales pueden ser simples o complejas, dependiendo de cuantas instrucciones concatenadas se les haya incluido.
 
 Cuando decimos que R nos **devuelve** algo, es que ha realizado algo que le hemos pedido, es decir, nos está dando una **salida* o respuesta de la instrucción solicitada.
 
