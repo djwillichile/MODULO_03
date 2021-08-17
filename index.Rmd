@@ -28,6 +28,8 @@ Sys.setenv(LANG = "es")
 ## Consideraciones y conceptos básicos
 Antes de iniciar con la actividad de hoy es fundamental conocer un poco del vocabulario usado en este lenguaje de programación. algunos conceptos básicos tienen una nomenclatura en concreto que deberíamos manejar como lenguaje con común para que no hayan confusiones al momento de desarrollar las actividad.
 
+### Ejecución y devolución
+
 Cuando hablamos del concepto **ejecutar**, **llamar** o **correr** nos referimos a pedir que R realice algo, en otras palabras, estamos dando una **instrucción** o una **entrada **.
 
 Cuando hablamos de **línea de código**, hacemos referencia a cada linea con **instrucciones** específicas, las cuales pueden ser simples o complejas, dependiendo de cuantas instrucciones concatenadas se les haya incluido.
@@ -42,6 +44,8 @@ Por ejemplo, si escribimos la línea de código siguiente en la consola y en seg
 
 Por otro lado Una función, a grandes rasgos, es una serie de operaciones a las que les hemos asignados un nombre. Las funciones aceptan argumentos, es decir, especificaciones sobre cómo deben funcionar. Cuando llamamos una función, se realizan las operaciones que ésta contiene, usando los argumentos que hemos establecido.
 
+### directorios
+
 El **directorio** o carpeta de trabajo es el lugar en nuestra computadora en el que se encuentran los archivos con los que estamos trabajando en R. Este es el lugar donde R buscara archivos para importarlos y al que serán exportados, a menos que indiquemos otra cosa.
 
 Cómo ya habrán visto en la clase anterior, pueden encontrar cuál es el directorio de trabajo con la función `getwd()`, mientras que para cambiar el directorio de trabajo se utiliza `setwd()`, donde el principal argumento corresponde a la ruta en que trabajarán.
@@ -55,6 +59,8 @@ setwd("G:/nuevo directorio")
 ```
 
 En el próximo módulo podrán estudiar más en detalle esta funciones y sus parámetros, así como también, podrán manipular ficheros y directorios para un trabajo más eficiente.
+
+### Paquetes
 
 R puede ser expandido con **paquetes** o **bibliotecas** que permiten una manipulación más eficiente de la programación en función de sus objetivos específicos. Cada paquete es una colección de funciones diseñadas para atender una tarea específica. Por ejemplo, hay paquetes para trabajo visualización geoespacial, análisis psicométricos, minería de datos, interacción con servicios de Internet y muchas otras cosas más.
 
@@ -74,12 +80,76 @@ Por último, haremos referencia al concepto de **script**, los *scripts* son doc
 
 ## Esquema de estructuración
 
-Como ya habrán podido darse cuenta durante el desarrollo del curso, al momento de generar un script, éste .
+Como ya habrán podido darse cuenta durante el desarrollo del curso, al momento de generar un script, éste se ejecuta de manera secuencial, y por lo tanto es necesario definir una estructura lógica para si escritura. Existen muchas formas en que pueden estructurar los script, a continuación, se les plantea uno de los esquemas más extendidos en el mundo de la programación.
 
+Es posible diferenciar 3 bloques bien definidos que se aprecian en la imagen siguiente y que pasaremos a detallar a continuación.
 
 ![](https://djwillichile.github.io/MODULO_03/IMG/ESTRUCTURA.png){width='100%'}
 
-## Importación de datos puntuales
+### Header o cabecera
+Corresponde al bloque en que se desea configurar el ambiente del *script* que se está escribiendo. En éste bloque se limpia la consola en caso ser necesario, se cargan los paquetes a utilizar (caso de no tenerlos instalados es necesario llamar a la función para instalar el paquete antes de cargarlo), se definen las funciones que se utilizarán más adelante en el script y se define el directorio de trabajo.
+
+### main o cuerpo principal
+Corresponde al bloque en el que se desarrollará la gran mayoría del código, en éste se cargarán los datos, constantes o variables de entrada (o iniciales) necesarias para desarrollar los procesos, se escriben los procesos a realizar en función de las operaciones aritméticas y lógicas definidas por las diversas estructuras de control (de las cuales hablaremos en unos instantes) y por último se guardarán los resultados de los procesos, exportándolos a sus respectivos formatos de salida.
+
+### Foother o piecera
+Por último, éste bloque busca cerrar todo proceso que haya quedado abierto en los bloques anteriores, permite liberar los recursos utilizados en los procesos desarrollados por el programa ejecutado y evitar un mal uso de la memoria virtual y física. Realizar este ultimo paso, se considera una buena práctica en el mundo de la programación.
+
+A continuación podemos observar un esquema en el que es posible encontrar los 3 bloques mencionados de la estructura planteada, recordar que es solo un script de ejemplo para visualizar la estructura, algunas funciones aun no las hemos visto, pero las describiremos más adelante en el curso.
+
+```{r, eval=FALSE}
+#esto es solo un ejemplo, no correr si no es necesario
+
+#limpiar entorno de trabajo
+rm(ls())
+gc()
+
+# instalamos paquetes
+install.packages("stats")
+
+# cargamos paquetes
+library("stats")
+
+#creamos funciones en este caso la moda
+statMode=function(x){
+  if(all(x==as.integer(x))|is.character(x)){
+    tab=table(x)
+    val=tab[[which.max(tab)]]
+    return(val)
+  }
+  if(is.double(x)){
+    tab=density(x)
+    val=tab$x[which.max(tab$y)]
+    return(val)
+  }
+}
+
+# definimos un nuevo directorio raiz
+setwd("G:/nuevo directorio")
+
+produccion=c(120,100,132,112,95,164,172,183,155,176,110,115,122,108,120)
+
+
+x=c(20, 20.3, 21, 20, 19, 20, 19, 19, 20, 21,20, 20, 19, 19, 20, 20)
+
+
+
+```
+
+
+
+## Estructuras de control
+Anteriormente mencionamos que las operaciones que se desarrollan en el *main* estaban definidas por las estructuras de control, justamente, como su nombre lo indica, éstas permiten controlar la manera en que se ejecuta nuestro programa
+
+Las estructuras de control establecen condiciones y rutinas para la ejecución del código. Un ejemplo de esto sería indicar las condiciones que se deben cumplir para realizar una operación aritmética o las necesarias para ejecutar una función en particular.
+
+Es posible reconocer 3 principales tipos de estructuras de control, las **secuencias**, 
+Esto es de gran utilidad para determinar la lógica y el orden en que ocurren las operaciones, en especial al definir funciones.
+
+![](https://djwillichile.github.io/MODULO_03/IMG/CONTROL.jpg){width='100%'}
+
+Las estructuras de control más usadas en R son las siguientes.
+
 Existe un gran número de formatos en que se puede importar datos, un ejemplo de estos es el ya conocido **csv** (*Comma Separated Values*), o el versátil **xlsx** de Excel, a continuación se importarán datos desde los formatos csv, xlsx, shp y kml. Para estos ejemplos utilizaremos los materiales encontrados en el repositorio <https://github.com/djwillichile/MODULO_05/tree/gh-pages/DATA>, también pueden acceder a todo el material utilizado para esta actividad mediante el siguiente **[enlace](https://djwillichile.github.io/MODULO_05/DATA/Materiales.zip)**.
 
 ## importar datos desde csv
