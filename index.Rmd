@@ -139,11 +139,19 @@ x=c(20, 20.3, 21, 20, 19, 20, 19, 19, 20, 21,20, 20, 19, 19, 20, 20)
 
 
 ## Estructuras de control
-Anteriormente mencionamos que las operaciones que se desarrollan en el *main* estaban definidas por las estructuras de control, justamente, como su nombre lo indica, éstas permiten controlar la manera en que se ejecuta nuestro programa
+Anteriormente mencionamos que las operaciones que se desarrollan en el *main* estaban definidas por las estructuras de control, justamente, como su nombre lo indica, éstas permiten controlar la manera en que se ejecuta nuestro programa.
 
 Las estructuras de control establecen condiciones y rutinas para la ejecución del código. Un ejemplo de esto sería indicar las condiciones que se deben cumplir para realizar una operación aritmética o las necesarias para ejecutar una función en particular.
 
-Es posible reconocer 3 principales tipos de estructuras de control, las **secuencias**, 
+Es posible reconocer 3 principales tipos de estructuras de control, por un lado tenemos las estructuras de **secuencia**, la cuale se caracterizan por ser el tipo de estructura mas simple y consta de ejecutar instrucciones en un orden especifico, una tras otra, este tipo de estructura se puede agrupar en 3 tipos de algoritos, **Asignación**, **Entrada** y **Salida**.
+
+Las estructuras *condicionales* por otro lado, son estructuras que  permiten seleccionar la rama del código a ejecutar dependiendo de la falsedad o veracidad de una o varias expresiones lógicas, dicho resultado sera utilizado por una estructura condicional para desviar el flujo de ejecución de un programa, es decir, si la condicion es verdadera se hace una cosa y si es falsa se hace otra. la estructura condicional se puede clasificar cómo simple (una respuesta si es verdadero y otra si es falso) o compleja (dependiendo de la desición se tomaráuna rama u otra).
+
+Esta estructura la podemos observar en nuestra vida cotidiana talcomo lo podemos observar en el siguiente diagrama
+
+![](https://djwillichile.github.io/MODULO_03/IMG/CONDICIONAL.jpg){width='70%'}
+
+
 Esto es de gran utilidad para determinar la lógica y el orden en que ocurren las operaciones, en especial al definir funciones.
 
 ![](https://djwillichile.github.io/MODULO_03/IMG/CONTROL.jpg){width='100%'}
