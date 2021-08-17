@@ -135,7 +135,9 @@ if(produccion>150){
   statMode(produccion[produccion>150])
 }
 
-
+#limpiar entorno de trabajo
+rm(ls())
+gc()
 
 ```
 
