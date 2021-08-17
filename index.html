@@ -403,8 +403,13 @@ statMode=<span class="cf">function</span>(x){
 
 produccion=<span class="kw">c</span>(<span class="dv">120</span>,<span class="dv">100</span>,<span class="dv">132</span>,<span class="dv">112</span>,<span class="dv">95</span>,<span class="dv">164</span>,<span class="dv">172</span>,<span class="dv">183</span>,<span class="dv">155</span>,<span class="dv">176</span>,<span class="dv">110</span>,<span class="dv">115</span>,<span class="dv">122</span>,<span class="dv">108</span>,<span class="dv">120</span>)
 
-
-x=<span class="kw">c</span>(<span class="dv">20</span>, <span class="fl">20.3</span>, <span class="dv">21</span>, <span class="dv">20</span>, <span class="dv">19</span>, <span class="dv">20</span>, <span class="dv">19</span>, <span class="dv">19</span>, <span class="dv">20</span>, <span class="dv">21</span>,<span class="dv">20</span>, <span class="dv">20</span>, <span class="dv">19</span>, <span class="dv">19</span>, <span class="dv">20</span>, <span class="dv">20</span>)</code></pre></div>
+<span class="cf">if</span>(produccion<span class="op">&gt;</span><span class="dv">150</span>){
+  <span class="kw">print</span>(<span class="st">&quot;Alta&quot;</span>)
+  <span class="kw">mean</span>(produccion[produccion<span class="op">&gt;</span><span class="dv">150</span>])
+} <span class="cf">else</span> {
+  <span class="kw">print</span>(<span class="st">&quot;Baja&quot;</span>)
+  <span class="kw">statMode</span>(produccion[produccion<span class="op">&gt;</span><span class="dv">150</span>])
+}</code></pre></div>
 </div>
 </div>
 <div id="estructuras-de-control" class="section level1">
