@@ -127,8 +127,13 @@ setwd("G:/nuevo directorio")
 
 produccion=c(120,100,132,112,95,164,172,183,155,176,110,115,122,108,120)
 
-
-x=c(20, 20.3, 21, 20, 19, 20, 19, 19, 20, 21,20, 20, 19, 19, 20, 20)
+if(produccion>150){
+  print("Alta")
+  mean(produccion[produccion>150])
+} else {
+  print("Baja")
+  statMode(produccion[produccion>150])
+}
 
 
 
