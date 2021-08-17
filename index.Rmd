@@ -1,7 +1,7 @@
 ---
-title: "Importación de información espacial"
+title: "Módulo 3: Aplicación de estructuras en programación"
 author: "Guillermo S. Fuentes Jaque"
-date: "August 12, 2021"
+date: "August 18, 2021"
 output:
   html_document:
     highlight: haddock
@@ -12,7 +12,8 @@ output:
 ---
 
 <style>
-  body {text-align: justify;font-family: sans-serif}
+  body {text-align: justify;font-family: sans-serif;}
+  #header {text-align: center;}
 </style>
 
 ```{r setup, include=FALSE}
@@ -21,9 +22,59 @@ knitr::opts_knit$set(global.device = TRUE)
 Sys.setenv(LANG = "es")
 ```
 
-# Datos espaciales
+<br>
 
-Es posible distinguir 3 tipos de geometrías en el modelo vectorial para el análisis espacial, estos corresponden a **puntos**, **líneas** y **polígonos**, los cuales hacen referencia a elementos con características particulares y su respectiva representación en el espacio, los polígonos representan elementos unidimensionales como por ejemplo superficies, las líneas representan elementos unidimensionales como por ejemplo calles o ríos, mientras que los puntos representarán la posición de algún objeto en el espacio, por ejemplo, un individuo, el centro de una ciudad e incluso la presencia de algún evento.
+# Estructuras en la programación
+## Consideraciones y conseptos básicos
+Antes de iniciar con la actividad de hoy es fundamental conocer un poco del vocabulario usado en en este lenguaje de programación. algunos conceptos básicos tienen una nomenclatura en concreto que deberíamos manejar como lenguaje con común para que no hayan confusiones al momento de desarrollar las actividad.
+
+Cuando hablamos del concepto **ejecutar**, **llamar** o **correr** nos referimos a pedir que R realice algo, en otras palabras, estamos dando una **instrucción** o una **entrada **.
+
+Cuando hablamos de **línea de código**, hacemos referencia hacemos referencia a cada linea con **instrucciones** específicas, las cuales pueden ser simples o complejas, dependiendo de cuantas instrucciones concatenadas se les haya incluido.
+
+Cuando decimos que R nos **devuelve** algo, es que ha realizado algo que le hemos pedido, es decir, nos está dando una **salida* o respuesta de la instrucción solicitada.
+
+Por ejemplo, si escribimos la línea de código siguiente en la consola y en seguida presionamos *enter*, estamos pidiendo que se ejecute la operación `1 + 1`, ello nos devolverá su resultado que es `[1] 2`. Es así que el la primera parte estamos ejecutando o corriendo una linea de código, mientras que la consola nos devuelve o retorna el resultado.
+```{r}
+# Ejecutamos una suma
+1+1
+```
+
+Por otro lado Una función, a grandes rasgos, es una serie de operaciones a las que les hemos asignados un nombre. Las funciones aceptan argumentos, es decir, especificaciones sobre cómo deben funcionar. Cuando llamamos una función, se realizan las operaciones que ésta contiene, usando los argumentos que hemos establecido.
+
+El **directorio** o carpeta de trabajo es el lugar en nuestra computadora en el que se encuentran los archivos con los que estamos trabajando en R. Este es el lugar donde R buscara archivos para importarlos y al que serán exportados, a menos que indiquemos otra cosa.
+
+Cómo ya habrán visto en la clase anterior, pueden encontrar cuál es el directorio de trabajo con la función `getwd()`, mientras que para cambiar el directorio de trabajo se utiliza `setwd()`, donde el principal argumento corresponde a la ruta en que trabajarán.
+```{r}
+# revisamos el directorio de trabajo
+getwd()
+```
+```{r,eval=FALSE}
+# definimos un nuevo directorio raiz
+setwd("G:/nuevo directorio")
+```
+
+En el próximo módulo podrán estudiar más en detalle esta funciones y sus parámetros, así como también, podrán manipular ficheros y directorios para un trabajo más eficiente.
+
+R puede ser expandido con **paquetes** o **bibliotecas** que permiten una manipulación más eficiente de la programación en función de sus objetivos específicos. Cada paquete es una colección de funciones diseñadas para atender una tarea específica. Por ejemplo, hay paquetes para trabajo visualización geoespacial, análisis psicométricos, minería de datos, interacción con servicios de Internet y muchas otras cosas más.
+
+Podemos instalar paquetes usando la función `install.packages()`, dando como argumento el nombre del paquete que deseamos instalar, entre comillas. Una vez concluida la instalación de un paquete, debemos cargarla en nuestro ambiente de trabajo, para así, poder usar sus funciones, esto se hace llamando a la función `library()` o `require()`, el único argumento necesario en esta función, será el nombre del paquete que queramos utilizar.
+```{r, eval=FALSE}
+# instalamos paquetes
+install.packages(c("raster","rgdal"))
+```
+
+```{r}
+# Cargamos paquetes
+library(raster)
+library(rgdal)
+```
+
+Por último, haremos referencia al concepto de **script**, los *scripts* son documentos de texto plano como cualquier otro documentos de texto, pero que permite la lectura y ejecución de las lineas de código R contenidas en éste.
+
+## Esquema de estructuración
+
+Como ya habrán podido darse cuenta durante el desarrollo del curso, al momento de generar un script, éste .
 
 ![](https://volaya.github.io/libro-sig/img/Primitivas_vectoriales.png){width='100%'}
 
