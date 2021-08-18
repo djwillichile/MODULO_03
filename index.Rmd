@@ -23,6 +23,7 @@ Sys.setenv(LANG = "es")
 ```
 
 <br>
+
 # Consideraciones y conceptos básicos
 Antes de iniciar con la actividad de hoy es fundamental conocer un poco del vocabulario usado en este lenguaje de programación. algunos conceptos básicos tienen una nomenclatura en concreto que deberíamos manejar como lenguaje con común para que no hayan confusiones al momento de desarrollar las actividad.
 
@@ -125,6 +126,8 @@ statMode=function(x){
 # definimos un nuevo directorio raiz
 setwd("G:/nuevo directorio")
 
+#=============================================================================#
+
 produccion=c(120,100,132,112,95,164,172,183,155,176,110,115,122,108,120)
 
 if(produccion>150){
@@ -134,6 +137,8 @@ if(produccion>150){
   print("Baja")
   statMode(produccion[produccion>150])
 }
+
+#=============================================================================#
 
 #limpiar entorno de trabajo
 rm(ls())
