@@ -307,7 +307,10 @@ div.tocify {
   body {text-align: justify;font-family: sans-serif;}
   #header {text-align: center;}
 </style>
-<p><br> # Consideraciones y conceptos básicos Antes de iniciar con la actividad de hoy es fundamental conocer un poco del vocabulario usado en este lenguaje de programación. algunos conceptos básicos tienen una nomenclatura en concreto que deberíamos manejar como lenguaje con común para que no hayan confusiones al momento de desarrollar las actividad.</p>
+<p><br></p>
+<div id="consideraciones-y-conceptos-básicos" class="section level1">
+<h1>Consideraciones y conceptos básicos</h1>
+<p>Antes de iniciar con la actividad de hoy es fundamental conocer un poco del vocabulario usado en este lenguaje de programación. algunos conceptos básicos tienen una nomenclatura en concreto que deberíamos manejar como lenguaje con común para que no hayan confusiones al momento de desarrollar las actividad.</p>
 <div id="ejecución-y-devolución" class="section level2">
 <h2>Ejecución y devolución</h2>
 <p>Cuando hablamos del concepto <strong>ejecutar</strong>, <strong>llamar</strong> o <strong>correr</strong> nos referimos a pedir que R realice algo, en otras palabras, estamos dando una <strong>instrucción</strong> o una <strong>entrada </strong>.</p>
@@ -351,6 +354,7 @@ div.tocify {
 ## To mute warnings of possible GDAL/OSR exportToProj4() degradation,
 ## use options(&quot;rgdal_show_exportToProj4_warnings&quot;=&quot;none&quot;) before loading rgdal.</code></pre>
 <p>Por último, haremos referencia al concepto de <strong>script</strong>, los <em>scripts</em> son documentos de texto plano como cualquier otro documentos de texto, pero que permite la lectura y ejecución de las lineas de código R contenidas en éste.</p>
+</div>
 </div>
 <div id="esquema-de-estructuración" class="section level1">
 <h1>Esquema de estructuración</h1>
@@ -401,6 +405,8 @@ statMode=<span class="cf">function</span>(x){
 <span class="co"># definimos un nuevo directorio raiz</span>
 <span class="kw">setwd</span>(<span class="st">&quot;G:/nuevo directorio&quot;</span>)
 
+<span class="co">#=============================================================================#</span>
+
 produccion=<span class="kw">c</span>(<span class="dv">120</span>,<span class="dv">100</span>,<span class="dv">132</span>,<span class="dv">112</span>,<span class="dv">95</span>,<span class="dv">164</span>,<span class="dv">172</span>,<span class="dv">183</span>,<span class="dv">155</span>,<span class="dv">176</span>,<span class="dv">110</span>,<span class="dv">115</span>,<span class="dv">122</span>,<span class="dv">108</span>,<span class="dv">120</span>)
 
 <span class="cf">if</span>(produccion<span class="op">&gt;</span><span class="dv">150</span>){
@@ -410,6 +416,8 @@ produccion=<span class="kw">c</span>(<span class="dv">120</span>,<span class="dv
   <span class="kw">print</span>(<span class="st">&quot;Baja&quot;</span>)
   <span class="kw">statMode</span>(produccion[produccion<span class="op">&gt;</span><span class="dv">150</span>])
 }
+
+<span class="co">#=============================================================================#</span>
 
 <span class="co">#limpiar entorno de trabajo</span>
 <span class="kw">rm</span>(<span class="kw">ls</span>())
